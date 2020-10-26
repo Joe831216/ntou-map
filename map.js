@@ -15,8 +15,8 @@ function start() {
 
 function initHtml(json) {
 	initMap(25.150860, 121.772653, false);
-	var dropdownMenuLink = document.getElementById("navbarDropdownMenuLink");
-	var locations = document.getElementById("locations");
+	let dropdownMenuLink = document.getElementById("navbarDropdownMenuLink");
+	let locations = document.getElementById("locations");
 
 	// Inner dropdown items to HTML.
 	json.forEach((value, index) => {
@@ -42,16 +42,16 @@ function initHtml(json) {
 
 function initMap(lat, lng, marker, msg) {
 	if (marker) {
-		var place = {lat: lat, lng: lng};
-		var map = new google.maps.Map(document.getElementById("map"), {
+		let place = {lat: lat, lng: lng};
+		let map = new google.maps.Map(document.getElementById("map"), {
 			zoom: 16.7,
 			center: place
 		});
-		var marker = new google.maps.Marker({
+		let marker = new google.maps.Marker({
 			position: place,
 			map: map
 		});
-		var infowindow = new google.maps.InfoWindow({
+		let infowindow = new google.maps.InfoWindow({
 			content: msg
 		});
 
@@ -61,8 +61,8 @@ function initMap(lat, lng, marker, msg) {
 				infowindow.open(marker.get("map"), marker);
 		});
 	} else {
-		var place = {lat: lat, lng: lng};
-		var map = new google.maps.Map(document.getElementById("map"), {
+		let place = {lat: lat, lng: lng};
+		let map = new google.maps.Map(document.getElementById("map"), {
 			zoom: 15.5,
 			center: place,
 		});
